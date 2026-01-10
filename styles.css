@@ -246,10 +246,6 @@ body {
 .calendly-container {
     max-width: 1000px;
     margin: 0 auto;
-    background-color: var(--bg-white);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: var(--shadow-lg);
 }
 
 .calendly-inline-widget {
@@ -304,9 +300,6 @@ body {
         padding: 60px 20px;
     }
 
-    .calendly-container {
-        padding: 10px;
-    }
 }
 
 @media (max-width: 480px) {
