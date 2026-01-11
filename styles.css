@@ -38,13 +38,25 @@ body {
 /* Section Hero */
 .hero-section {
     background: var(--gradient-primary);
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
-    padding: 60px 20px;
+    overflow: visible;
+    padding: 40px 20px 80px;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--primary-color) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .hero-section::before {
@@ -188,15 +200,38 @@ body {
     border-color: transparent;
 }
 
+/* Indicateur de scroll */
+.scroll-indicator {
+    margin-top: 40px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-indicator i {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
 /* Section VSL */
 .vsl-section {
-    padding: 100px 20px;
+    padding: 60px 20px;
     background-color: var(--bg-white);
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .section-title {
@@ -239,7 +274,7 @@ body {
 
 /* Section Calendly */
 .calendly-section {
-    padding: 100px 20px;
+    padding: 60px 20px;
     background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
 }
 
@@ -297,7 +332,16 @@ body {
 
     .vsl-section,
     .calendly-section {
-        padding: 60px 20px;
+        padding: 40px 15px;
+    }
+
+    .section-header {
+        margin-bottom: 25px;
+    }
+
+    .hero-section {
+        min-height: 70vh;
+        padding: 30px 15px 60px;
     }
 
 }
