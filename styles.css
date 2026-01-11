@@ -297,6 +297,59 @@ body {
     overflow: hidden;
 }
 
+/* Section Réseaux Sociaux */
+.social-section {
+    padding: 60px 20px;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.social-links-footer {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-link-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.social-link-footer i {
+    font-size: 2rem;
+}
+
+.social-link-footer:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.social-link-footer.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--bg-white);
+}
+
+.social-link-footer.facebook:hover {
+    background: #1877f2;
+    color: var(--bg-white);
+}
+
+.social-link-footer.linkedin:hover {
+    background: #0077b5;
+    color: var(--bg-white);
+}
+
 /* Footer */
 .footer {
     background-color: var(--text-dark);
