@@ -38,13 +38,12 @@ body {
 /* Section Hero */
 .hero-section {
     background: var(--gradient-primary);
-    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding: 40px 20px 100px;
+    padding: 60px 20px 80px;
 }
 
 
@@ -189,6 +188,19 @@ body {
     border-color: transparent;
 }
 
+/* Vidéo dans le Hero */
+.hero-video-wrapper {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-video-wrapper .video-container {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
 /* Indicateur de scroll */
 .scroll-indicator {
     margin-top: 40px;
@@ -210,32 +222,6 @@ body {
     60% {
         transform: translateY(-5px);
     }
-}
-
-/* Section VSL */
-.vsl-section {
-    padding: 60px 20px;
-    background-color: var(--bg-white);
-    position: relative;
-    z-index: 5;
-}
-
-.vsl-section::before {
-    content: '';
-    position: absolute;
-    top: -120px;
-    left: 0;
-    right: 0;
-    height: 120px;
-    background: linear-gradient(to top, 
-        var(--bg-white) 0%,
-        rgba(255,255,255,0.95) 20%,
-        rgba(255,255,255,0.8) 40%,
-        rgba(255,255,255,0.5) 60%,
-        rgba(255,255,255,0.2) 80%,
-        transparent 100%
-    );
-    pointer-events: none;
 }
 
 .section-header {
@@ -402,8 +388,7 @@ body {
     }
 
     .hero-section {
-        min-height: 70vh;
-        padding: 30px 15px 60px;
+        padding: 40px 15px 60px;
     }
 
 }
