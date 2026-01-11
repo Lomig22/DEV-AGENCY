@@ -269,8 +269,28 @@ body {
 
 /* Section Calendly */
 .calendly-section {
-    padding: 60px 20px;
-    background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
+    padding: 80px 20px 60px;
+    background: var(--bg-white);
+    position: relative;
+}
+
+.calendly-section::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, 
+        transparent 0%,
+        rgba(255,255,255,0.1) 20%,
+        rgba(255,255,255,0.3) 40%,
+        rgba(255,255,255,0.6) 60%,
+        rgba(255,255,255,0.85) 80%,
+        var(--bg-white) 100%
+    );
+    pointer-events: none;
+    z-index: 10;
 }
 
 .calendly-container {
