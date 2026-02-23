@@ -43,7 +43,63 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding: 60px 20px 80px;
+    padding: 30px 20px 60px;
+}
+
+/* Statistiques en arrière-plan */
+.stats-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stat-bg-item {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.06);
+    text-transform: uppercase;
+    white-space: nowrap;
+    animation: floatBg 6s ease-in-out infinite;
+}
+
+.stat-bg-item:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.stat-bg-item:nth-child(3) {
+    animation-delay: 3s;
+}
+
+.stat-bg-item:nth-child(4) {
+    animation-delay: 4.5s;
+}
+
+@keyframes floatBg {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.06;
+    }
+    50% {
+        transform: translateY(-10px) scale(1.02);
+        opacity: 0.1;
+    }
+}
+
+.calendly-bg {
+    justify-content: center;
+    gap: 100px;
+}
+
+.calendly-bg .stat-bg-item {
+    color: rgba(99, 102, 241, 0.08);
 }
 
 
@@ -351,6 +407,151 @@ body {
     color: var(--bg-white);
 }
 
+/* Section Statistiques */
+.stats-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-card.highlight {
+    background: var(--gradient-primary);
+    color: var(--bg-white);
+}
+
+.stat-card.highlight .stat-icon,
+.stat-card.highlight .stat-number,
+.stat-card.highlight .stat-label {
+    color: var(--bg-white);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Section Témoignages */
+.testimonials-section {
+    padding: 80px 20px;
+    background: var(--bg-white);
+}
+
+.google-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.google-logo {
+    height: 24px;
+    width: auto;
+}
+
+.rating-stars {
+    color: #fbbc04;
+    font-size: 1.2rem;
+}
+
+.rating-text {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: var(--bg-light);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.testimonial-stars {
+    color: #fbbc04;
+    font-size: 0.9rem;
+}
+
+.testimonial-text {
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1.7;
+}
+
 /* Footer */
 .footer {
     background-color: var(--text-dark);
@@ -403,7 +604,37 @@ body {
     }
 
     .hero-section {
-        padding: 40px 15px 60px;
+        padding: 20px 15px 40px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-bg-item {
+        font-size: 1.5rem;
+    }
+
+    .stats-section {
+        padding: 40px 15px;
+    }
+
+    .testimonials-section {
+        padding: 50px 15px;
     }
 
 }
