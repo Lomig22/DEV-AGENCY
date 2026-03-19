@@ -3,95 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agence de création de site web professionnel - Transformez votre présence digitale">
-    <title>Agence de Création de Sites Web | Votre Partenaire Digital</title>
+    <meta name="description" content="Webinaire gratuit : Découvrez le système d'acquisition digital qui permet de générer des résultats concrets en 2026">
+    <title>Webinaire Acquisition Digitale 2026 | Payment Flow</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <style>
+        /* Tally Fullscreen Overlay */
+        .tally-fullscreen-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            z-index: 99999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .tally-fullscreen-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        .tally-fullscreen-overlay iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .tally-close-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .tally-close-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-    <!-- Section Hero avec Vidéo -->
+    <!-- Section Hero -->
     <section class="hero-section">
-        <!-- Statistiques en arrière-plan -->
-        <div class="stats-background">
-            <div class="stat-bg-item">+150 sites créés</div>
-            <div class="stat-bg-item">36k+ événements</div>
-            <div class="stat-bg-item">10k+ vues</div>
-            <div class="stat-bg-item">447 utilisateurs actifs</div>
+        <div class="hero-bg-elements">
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+            <div class="hero-blob blob-3"></div>
         </div>
         <div class="container">
-            <div class="hero-content">
-                <div class="profile-container">
-                    <h1 class="hero-title">Pourquoi la majorité des sites web ne convertissent pas — et comment les bons font la différence.</h1>
-                    <p class="hero-subtitle">2 minutes suffisent pour comprendre pourquoi votre site ne convertit pas.</p>
-                    
-                    <!-- Vidéo YouTube intégrée -->
-                    <div class="hero-video-wrapper">
-                        <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/icGYveq4bDc" 
-                                title="Video de présentation"
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
+            <div class="hero-content fade-in">
+                <span class="hero-badge">🎯 Webinaire Gratuit</span>
+                <h1 class="hero-title">Pourquoi certains entrepreneurs explosent leurs ventes en 2026 grâce à leur acquisition digitale… <span class="highlight">pendant que 90% des sites web ne convertissent toujours pas</span></h1>
+                
+                <div class="hero-subtitle-box">
+                    <p class="hero-subtitle">Un système simple, structuré et reproductible que nous utilisons déjà avec nos clients pour générer des résultats concrets.</p>
+                    <p class="hero-subtitle">Sans dépendre du hasard, ni multiplier les outils inutiles.</p>
+                    <p class="hero-subtitle"><strong>Même avec un site existant.</strong></p>
+                </div>
+
+                <div class="hero-video-intro">
+                    <p class="video-intro-text"><i class="fas fa-play-circle"></i> Découvre en quelques minutes pourquoi la majorité des sites web ne convertissent pas… et ce que font différemment ceux qui génèrent des résultats</p>
+                </div>
+
+                <div class="hero-video-wrapper">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/m5hZaY4c1Ws" 
+                            title="Webinaire Acquisition Digitale"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                    
-                    <!-- Indicateur de scroll -->
-                    <div class="scroll-indicator">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <button class="cta-button primary">
+                        <span>J'accède au webinaire</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <p class="cta-subtext">100% gratuit</p>
+                </div>
+
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Statistiques -->
+    <!-- Section Statistiques / Crédibilité -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card fade-in">
                     <div class="stat-icon"><i class="fas fa-globe"></i></div>
                     <div class="stat-number">+150</div>
                     <div class="stat-label">Sites web créés</div>
                 </div>
-                <div class="stat-card highlight">
+                <div class="stat-card highlight fade-in">
                     <div class="stat-icon"><i class="fas fa-star"></i></div>
-                    <div class="stat-number">4.9/5</div>
-                    <div class="stat-label">Sur Google (46 avis)</div>
+                    <div class="stat-number">5/5 ⭐</div>
+                    <div class="stat-label">Note moyenne sur Google</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
-                    <div class="stat-number">36k+</div>
-                    <div class="stat-label">Événements générés</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-eye"></i></div>
-                    <div class="stat-number">10k+</div>
-                    <div class="stat-label">Vues mensuelles en moyenne</div>
+                <div class="stat-card fade-in">
+                    <div class="stat-icon"><i class="fas fa-euro-sign"></i></div>
+                    <div class="stat-number">+300k €</div>
+                    <div class="stat-label">Générés grâce à mes stratégies</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Calendly -->
-    <section class="calendly-section">
-        <!-- Statistiques en arrière-plan -->
-        <div class="stats-background calendly-bg">
-            <div class="stat-bg-item">+150 sites</div>
-            <div class="stat-bg-item">4.9★ Google</div>
-            <div class="stat-bg-item">36k+ events</div>
-        </div>
+    <!-- Section Qui est Lomig -->
+    <section class="about-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Obtenez votre site web gratuitement pendant 30 jours</h2>
-                <p class="section-description">Nous vous présentons votre site web orienté conversion. Disponible pendant 30 jours gratuitement</p>
+            <div class="about-card glass-card fade-in">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">Qui est Lomig ?</h2>
+                        <div class="about-description">
+                            <p><strong>Lomig Guegueniat</strong>, entrepreneur web depuis plus de 5 ans.</p>
+                            <p>Spécialisé en marketing digital et conception de sites web, il partage son évolution depuis ses débuts sur YouTube jusqu'à la génération de ses premières dizaines de milliers d'euros.</p>
+                            <p>Fondateur de <strong>Payment Flow</strong>, un collectif de +10 experts en marketing digital qui conçoit des systèmes d'acquisition sur mesure pour aider les entreprises à scaler.</p>
+                            <p>Aujourd'hui, il accompagne également les entrepreneurs ambitieux à structurer et accélérer leur croissance.</p>
+                            <p class="about-highlight"><i class="fas fa-award"></i> Ambassadeur de Yahoo, une initiative dédiée à accompagner les TPE/PME françaises vers plus de performance et de scalabilité.</p>
+                        </div>
+                        <div class="about-cta">
+                            <button class="cta-button primary">
+                                <span>J'accède au webinaire</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <p class="cta-subtext">100% gratuit</p>
+                        </div>
+                    </div>
+                    <div class="about-visuals">
+                        <div class="visual-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Sites Web Performants</span>
+                        </div>
+                        <div class="visual-card">
+                            <i class="fab fa-youtube"></i>
+                            <span>Contenu YouTube</span>
+                        </div>
+                        <div class="visual-card">
+                            <i class="fas fa-rocket"></i>
+                            <span>Systèmes d'Acquisition</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="calendly-container">
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/paymentfloww/prevuesiteweb?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-                <!-- Calendly inline widget end -->
+        </div>
+    </section>
+
+    <!-- Section Ce que tu vas apprendre -->
+    <section class="learn-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Ce que tu vas apprendre</h2>
+                <p class="section-description">Les clés pour transformer ton acquisition digitale en 2026</p>
+            </div>
+            <div class="learn-grid">
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-times-circle"></i></div>
+                    <p>Pourquoi <strong>90% des sites web ne convertissent pas</strong></p>
+                </div>
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-chart-line"></i></div>
+                    <p>Les <strong>formats d'acquisition gagnants</strong> en 2026</p>
+                </div>
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-cogs"></i></div>
+                    <p>Le <strong>système utilisé</strong> pour générer des résultats clients</p>
+                </div>
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-sync-alt"></i></div>
+                    <p>Comment <strong>améliorer tes conversions</strong> sans tout refaire</p>
+                </div>
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <p>Les <strong>erreurs qui bloquent ta croissance</strong> aujourd'hui</p>
+                </div>
             </div>
         </div>
     </section>
@@ -99,7 +211,7 @@
     <!-- Section Avis Clients -->
     <section class="testimonials-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Ce que nos clients disent de nous</h2>
                 <div class="google-rating">
                     <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="google-logo">
@@ -108,33 +220,17 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <span class="rating-text">4.9/5 basé sur 46 avis</span>
+                    <span class="rating-text">5/5 sur Google</span>
                 </div>
             </div>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">M</div>
-                        <div class="testimonial-info">
-                            <div class="testimonial-name">Marc D.</div>
-                            <div class="testimonial-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Service exceptionnel ! Mon site a été livré en un temps record et les conversions ont augmenté de 40% dès le premier mois."</p>
-                </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">S</div>
                         <div class="testimonial-info">
-                            <div class="testimonial-name">Sophie L.</div>
+                            <div class="testimonial-name">Sarino Pitirili</div>
                             <div class="testimonial-stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -144,13 +240,13 @@
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"Équipe très professionnelle et à l'écoute. Le design est moderne et le site est parfaitement optimisé pour le SEO."</p>
+                    <p class="testimonial-text">"J'ai eu le plaisir de travailler avec Lomig pour la création de mon site internet et je ne peux que recommander son travail. Le résultat est professionnel, clair et parfaitement aligné avec mon activité."</p>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-avatar">O</div>
                         <div class="testimonial-info">
-                            <div class="testimonial-name">Pierre B.</div>
+                            <div class="testimonial-name">Oara</div>
                             <div class="testimonial-stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -160,7 +256,72 @@
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"Je recommande à 100% ! Rapport qualité-prix imbattable et un accompagnement personnalisé tout au long du projet."</p>
+                    <p class="testimonial-text">"Très satisfait du résultat, personne à l'écoute, je recommande."</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Mathieu André</div>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Un service top et réactif."</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">F</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">François Crézé</div>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Efficace et professionnel, je recommande."</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">E</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">En Harmonie – Cours de piano</div>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"À l'écoute de ses clients, très compétitif en tarif avec une vraie qualité et visibilité. Facilement joignable."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA Final -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-card glass-card fade-in">
+                <h2 class="final-cta-title">Ta croissance dépend de ton système d'acquisition</h2>
+                <p class="final-cta-text">Tu peux continuer à tester au hasard… ou comprendre enfin ce qui fonctionne réellement en 2026.</p>
+                <div class="final-cta-buttons">
+                    <button class="cta-button primary large">
+                        <span>Je réserve ma place</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <p class="cta-subtext">Accès gratuit – places limitées</p>
                 </div>
             </div>
         </div>
@@ -169,8 +330,120 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Agence de Création Web. Tous droits réservés.</p>
+            <p>&copy; 2026 Payment Flow. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <!-- Tally Fullscreen Overlay -->
+    <div id="tally-fullscreen" class="tally-fullscreen-overlay">
+        <button class="tally-close-btn" onclick="closeTallyFullscreen()">
+            <i class="fas fa-times"></i>
+        </button>
+        <iframe data-tally-src="https://tally.so/r/5B2DDo?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="WEBINAIRE - ACQUISITION DIGITALE"></iframe>
+    </div>
+
+    <script>
+        // Auto-open Tally popup after 1 second using native widget
+        setTimeout(function() {
+            if (typeof Tally !== 'undefined') {
+                Tally.openPopup('5B2DDo', {
+                    hideTitle: true,
+                    emoji: {
+                        text: '👋',
+                        animation: 'wave'
+                    }
+                });
+            }
+        }, 1000);
+
+        // Track if fullscreen is open
+        let isFullscreenOpen = false;
+
+        // Tally Fullscreen Functions
+        function openTallyFullscreen() {
+            isFullscreenOpen = true;
+            
+            const overlay = document.getElementById('tally-fullscreen');
+            const iframe = overlay.querySelector('iframe');
+            
+            // Load iframe src if not already loaded
+            if (!iframe.src && iframe.dataset.tallySrc) {
+                iframe.src = iframe.dataset.tallySrc;
+            }
+            
+            overlay.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            setTimeout(() => {
+                overlay.classList.add('active');
+            }, 10);
+        }
+
+        function closeTallyFullscreen() {
+            isFullscreenOpen = false;
+            const overlay = document.getElementById('tally-fullscreen');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                // Re-open Tally popup after closing fullscreen
+                setTimeout(function() {
+                    if (typeof Tally !== 'undefined') {
+                        Tally.openPopup('5B2DDo', {
+                            hideTitle: true,
+                            emoji: {
+                                text: '👋',
+                                animation: 'wave'
+                            }
+                        });
+                    }
+                }, 1000);
+            }, 300);
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (isFullscreenOpen) {
+                    closeTallyFullscreen();
+                }
+            }
+        });
+
+        // Attach click handlers to all CTA buttons
+        document.querySelectorAll('.cta-button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openTallyFullscreen();
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
