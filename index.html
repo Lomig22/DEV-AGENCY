@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script async src="https://tally.so/widgets/embed.js"></script>
     
     <!-- LinkedIn Insight Tag -->
     <script type="text/javascript">
@@ -31,55 +30,73 @@
     </noscript>
     
     <style>
-        /* Tally Fullscreen Overlay */
-        .tally-fullscreen-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .hero-date-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249, 115, 22, 0.2);
+            border: 1px solid rgba(249, 115, 22, 0.5);
+            color: #fdba74;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 18px;
+            letter-spacing: 0.02em;
+        }
+        .hero-date-banner i { color: #f97316; }
+        .hero-title .accent { color: #f97316; }
+        .register-form {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 18px;
+            margin-top: 14px;
+            backdrop-filter: blur(10px);
+        }
+        .register-form input {
             width: 100%;
-            height: 100%;
-            background: #0f172a;
-            z-index: 99999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .tally-fullscreen-overlay.active {
-            display: block;
-            opacity: 1;
-        }
-        .tally-fullscreen-overlay iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .tally-close-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
+            padding: 11px 14px;
+            border-radius: 10px;
+            border: 1.5px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
             color: #fff;
-            font-size: 24px;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            outline: none;
+            transition: border 0.2s;
+            box-sizing: border-box;
+        }
+        .register-form input::placeholder { color: rgba(255,255,255,0.45); }
+        .register-form input:focus { border-color: #f97316; background: rgba(255,255,255,0.12); }
+        .register-form .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
             cursor: pointer;
-            z-index: 100000;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            gap: 10px;
+            margin-top: 4px;
         }
-        .tally-close-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(1.1);
+        .register-form .submit-btn:hover { background: linear-gradient(135deg, #ea580c, #c2410c); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(249,115,22,0.4); }
+        .register-form .form-note { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-align: center; margin-top: 10px; }
+        .hero-below-form { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-top: 12px; font-style: italic; }
+        @media (max-width: 900px) {
+            .hero-layout { grid-template-columns: 1fr; gap: 30px; }
         }
     </style>
 </head>
@@ -92,42 +109,77 @@
             <div class="hero-blob blob-3"></div>
         </div>
         <div class="container">
-            <div class="hero-content fade-in">
-                <span class="hero-badge">🎯 Webinaire Gratuit</span>
-                <h1 class="hero-title">Pourquoi certains entrepreneurs explosent leurs ventes en 2026 grâce à leur acquisition digitale… <span class="highlight">pendant que 90% des sites web ne convertissent toujours pas</span></h1>
-                
-                <div class="hero-subtitle-box">
-                    <p class="hero-subtitle">Un système simple, structuré et reproductible que nous utilisons déjà avec nos clients pour générer des résultats concrets.</p>
-                    <p class="hero-subtitle">Sans dépendre du hasard, ni multiplier les outils inutiles.</p>
-                    <p class="hero-subtitle"><strong>Même avec un site existant.</strong></p>
-                </div>
-
-                <div class="hero-video-intro">
-                    <p class="video-intro-text"><i class="fas fa-play-circle"></i> Découvre en quelques minutes pourquoi la majorité des sites web ne convertissent pas… et ce que font différemment ceux qui génèrent des résultats</p>
-                </div>
-
-                <div class="hero-video-wrapper">
-                    <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/m5hZaY4c1Ws" 
-                            title="Webinaire Acquisition Digitale"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
+            <div class="hero-layout fade-in">
+                <!-- Colonne gauche : Vidéo -->
+                <div class="hero-video-col">
+                    <div class="hero-video-wrapper">
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/m5hZaY4c1Ws" 
+                                title="Webinaire Acquisition Digitale"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                 </div>
-
-                <div class="hero-cta">
-                    <button class="cta-button primary">
-                        <span>J'accède au webinaire</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                    <p class="cta-subtext">100% gratuit</p>
+                <!-- Colonne droite : Texte + Form -->
+                <div class="hero-text-col">
+                    <div class="hero-date-banner">
+                        <i class="fas fa-calendar-alt"></i>
+                        Jeudi 26 mars – Direct Live à 20h
+                    </div>
+                    <h1 class="hero-title">Accède <span class="accent">GRATUITEMENT</span> à 85% des stratégies que j'utilise pour vendre en ligne et générer des demandes de devis en <span class="accent">continu</span></h1>
+                    <h2 class="hero-h2">…sans prospecter, sans audience, et sans perdre du temps sur des méthodes inefficaces</h2>
+                    <div class="register-form" id="register-form">
+                        <form action="https://formsubmit.co/lomig.guegueniat@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="Nouvelle inscription Webinaire">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://lomig22.github.io/DEV-AGENCY/merci.html">
+                            <input type="text" name="name" placeholder="Entre ton nom et prénom" required>
+                            <input type="email" name="email" placeholder="Entre ton email" required>
+                            <input type="tel" name="phone" placeholder="Entre ton numéro de téléphone" required>
+                            <button type="submit" class="submit-btn">
+                                <span>Je m'inscris au webinaire</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <p class="form-note">🔒 100% gratuit – Aucune carte bancaire requise</p>
+                        </form>
+                    </div>
+                    <p class="hero-below-form">Tu vas découvrir comment je génère entre 50 et 150 leads qualifiés par mois et plusieurs demandes de devis chaque semaine grâce à des stratégies simples.<br>Pas de blabla, uniquement des méthodes actionnables pour te lancer, même sans audience, sans réseau et sans compétences techniques.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="scroll-indicator">
-                    <i class="fas fa-chevron-down"></i>
+    <!-- Section Ce que tu vas apprendre (déplacée juste après le hero) -->
+    <section class="learn-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Ce que tu vas apprendre</h2>
+                <p class="section-description">Les clés pour transformer ton acquisition digitale en 2026</p>
+            </div>
+            <div class="learn-grid">
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-times-circle"></i></div>
+                    <p>Pourquoi <strong>90% des sites web ne convertissent pas</strong></p>
+                </div>
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-chart-line"></i></div>
+                    <p>Les <strong>formats d'acquisition gagnants</strong> en 2026</p>
+                </div>
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-cogs"></i></div>
+                    <p>Le <strong>système utilisé</strong> pour générer des résultats clients</p>
+                </div>
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-sync-alt"></i></div>
+                    <p>Comment <strong>améliorer tes conversions</strong> sans tout refaire</p>
+                </div>
+                <div class="learn-item fade-in">
+                    <div class="learn-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <p>Les <strong>erreurs qui bloquent ta croissance</strong> aujourd'hui</p>
                 </div>
             </div>
         </div>
@@ -198,37 +250,6 @@
         </div>
     </section>
 
-    <!-- Section Ce que tu vas apprendre -->
-    <section class="learn-section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Ce que tu vas apprendre</h2>
-                <p class="section-description">Les clés pour transformer ton acquisition digitale en 2026</p>
-            </div>
-            <div class="learn-grid">
-                <div class="learn-item fade-in">
-                    <div class="learn-icon"><i class="fas fa-times-circle"></i></div>
-                    <p>Pourquoi <strong>90% des sites web ne convertissent pas</strong></p>
-                </div>
-                <div class="learn-item fade-in">
-                    <div class="learn-icon"><i class="fas fa-chart-line"></i></div>
-                    <p>Les <strong>formats d'acquisition gagnants</strong> en 2026</p>
-                </div>
-                <div class="learn-item fade-in">
-                    <div class="learn-icon"><i class="fas fa-cogs"></i></div>
-                    <p>Le <strong>système utilisé</strong> pour générer des résultats clients</p>
-                </div>
-                <div class="learn-item fade-in">
-                    <div class="learn-icon"><i class="fas fa-sync-alt"></i></div>
-                    <p>Comment <strong>améliorer tes conversions</strong> sans tout refaire</p>
-                </div>
-                <div class="learn-item fade-in">
-                    <div class="learn-icon"><i class="fas fa-exclamation-triangle"></i></div>
-                    <p>Les <strong>erreurs qui bloquent ta croissance</strong> aujourd'hui</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Section Avis Clients -->
     <section class="testimonials-section">
@@ -339,10 +360,10 @@
                 <h2 class="final-cta-title">Ta croissance dépend de ton système d'acquisition</h2>
                 <p class="final-cta-text">Tu peux continuer à tester au hasard… ou comprendre enfin ce qui fonctionne réellement en 2026.</p>
                 <div class="final-cta-buttons">
-                    <button class="cta-button primary large">
-                        <span>Je réserve ma place</span>
+                    <a href="#register-form" class="cta-button primary large">
+                        <span>Je m'inscris au webinaire</span>
                         <i class="fas fa-arrow-right"></i>
-                    </button>
+                    </a>
                     <p class="cta-subtext">Accès gratuit – places limitées</p>
                 </div>
             </div>
@@ -356,93 +377,12 @@
         </div>
     </footer>
 
-    <!-- Tally Fullscreen Overlay -->
-    <div id="tally-fullscreen" class="tally-fullscreen-overlay">
-        <button class="tally-close-btn" onclick="closeTallyFullscreen()">
-            <i class="fas fa-times"></i>
-        </button>
-        <iframe data-tally-src="https://tally.so/r/5B2DDo?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="WEBINAIRE - ACQUISITION DIGITALE"></iframe>
-    </div>
-
     <script>
-        // Auto-open Tally popup after 1 second using native widget
-        setTimeout(function() {
-            if (typeof Tally !== 'undefined') {
-                Tally.openPopup('5B2DDo', {
-                    hideTitle: true,
-                    emoji: {
-                        text: '👋',
-                        animation: 'wave'
-                    }
-                });
+        // LinkedIn conversion tracking on form submit
+        document.querySelector('.register-form form').addEventListener('submit', function() {
+            if (typeof window.lintrk !== 'undefined') {
+                window.lintrk('track', { conversion_id: 26876553 });
             }
-        }, 1000);
-
-        // Track if fullscreen is open
-        let isFullscreenOpen = false;
-
-        // Tally Fullscreen Functions
-        function openTallyFullscreen() {
-            isFullscreenOpen = true;
-            
-            const overlay = document.getElementById('tally-fullscreen');
-            const iframe = overlay.querySelector('iframe');
-            
-            // Load iframe src if not already loaded
-            if (!iframe.src && iframe.dataset.tallySrc) {
-                iframe.src = iframe.dataset.tallySrc;
-            }
-            
-            overlay.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            
-            setTimeout(() => {
-                overlay.classList.add('active');
-            }, 10);
-        }
-
-        function closeTallyFullscreen() {
-            isFullscreenOpen = false;
-            const overlay = document.getElementById('tally-fullscreen');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-            
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                // Re-open Tally popup after closing fullscreen
-                setTimeout(function() {
-                    if (typeof Tally !== 'undefined') {
-                        Tally.openPopup('5B2DDo', {
-                            hideTitle: true,
-                            emoji: {
-                                text: '👋',
-                                animation: 'wave'
-                            }
-                        });
-                    }
-                }, 1000);
-            }, 300);
-        }
-
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                if (isFullscreenOpen) {
-                    closeTallyFullscreen();
-                }
-            }
-        });
-
-        // Attach click handlers to all CTA buttons
-        document.querySelectorAll('.cta-button').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                // LinkedIn conversion tracking
-                if (typeof window.lintrk !== 'undefined') {
-                    window.lintrk('track', { conversion_id: 26876553 });
-                }
-                openTallyFullscreen();
-            });
         });
 
         // Fade-in animation on scroll
