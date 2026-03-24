@@ -404,11 +404,15 @@
             btn.disabled = true;
 
             const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
 
             fetch('https://formsubmit.co/ajax/lomig.guegueniat@gmail.com', {
                 method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
             })
             .then(res => res.json())
             .then(data => {
