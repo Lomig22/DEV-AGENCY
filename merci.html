@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour ton inscription | Payment Flow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3b82f6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern></defs><rect width="60" height="60" fill="url(%23grid)"/></svg>');
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.35;
+            pointer-events: none;
+        }
+        .blob-1 { width: 400px; height: 400px; background: #f97316; top: -100px; right: -100px; }
+        .blob-2 { width: 300px; height: 300px; background: #3b82f6; bottom: -80px; left: -80px; }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 28px;
+            padding: 52px 48px;
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeUp 0.6s ease both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .sending-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.35);
+            color: #fdba74;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.3); }
+            50%       { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+        }
+
+        .check-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f97316, #3b82f6);
+            border-radius: 2px;
+            margin: 0 auto 24px;
+        }
+
+        .upsell-box {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+
+        .upsell-emoji {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .upsell-text {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        .upsell-text strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 18px 30px;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(249, 115, 22, 0.35);
+        }
+
+        .cta-btn:hover {
+            background: linear-gradient(135deg, #ea580c, #c2410c);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px rgba(249, 115, 22, 0.5);
+        }
+
+        .note {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .card { padding: 36px 24px; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="card">
+        <div class="sending-badge">
+            📩 Ton invitation est en cours d'envoi ...
+        </div>
+
+        <div class="check-icon">✅</div>
+
+        <h1>Merci d'avoir rempli ce formulaire, tu veux aller plus loin ?</h1>
+
+        <div class="divider"></div>
+
+        <div class="upsell-box">
+            <div class="upsell-emoji">👇🏻</div>
+            <p class="upsell-text">
+                <strong>Réserve un appel gratuit avec mon équipe</strong> pour obtenir un <strong>audit de ton site web actuel gratuitement</strong> ou obtenir une <strong>nouvelle maquette de site web gratuite orientée conversion</strong> !
+            </p>
+        </div>
+
+        <a href="https://calendly.com/paymentfloww/prevuesiteweb" target="_blank" class="cta-btn">
+            <span>Réserver ma consultation gratuite</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <p class="note">Aucun engagement — 100% gratuit</p>
+    </div>
+</body>
+</html>

@@ -95,6 +95,14 @@
         .register-form .submit-btn:hover { background: linear-gradient(135deg, #ea580c, #c2410c); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(249,115,22,0.4); }
         .register-form .form-note { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-align: center; margin-top: 10px; }
         .hero-below-form { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-top: 12px; font-style: italic; }
+        .form-success { display: none; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 24px; margin-top: 14px; text-align: center; }
+        .form-success.visible { display: block; animation: fadeUp 0.5s ease both; }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(16px);} to { opacity:1; transform:translateY(0);} }
+        .form-success .sending { display: inline-flex; align-items: center; gap: 8px; background: rgba(249,115,22,0.15); border: 1px solid rgba(249,115,22,0.35); color: #fdba74; font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 50px; margin-bottom: 16px; }
+        .form-success h3 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+        .form-success p { color: rgba(255,255,255,0.75); font-size: 0.82rem; line-height: 1.6; margin-bottom: 16px; }
+        .form-success .calendly-btn { display: inline-flex; align-items: center; gap: 8px; width: 100%; justify-content: center; padding: 14px 20px; background: linear-gradient(135deg, #f97316, #ea580c); color: #fff; font-size: 0.95rem; font-weight: 700; border-radius: 12px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(249,115,22,0.35); }
+        .form-success .calendly-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(249,115,22,0.5); }
         @media (max-width: 900px) {
             .hero-layout { grid-template-columns: 1fr; gap: 20px; }
             .hero-text-col { order: 1; }
@@ -135,19 +143,27 @@
                     <h1 class="hero-title">Accède <span class="accent">GRATUITEMENT</span> à 85% des stratégies que j'utilise pour vendre en ligne et générer des demandes de devis en <span class="accent">continu</span></h1>
                     <h2 class="hero-h2">…sans prospecter, sans audience, et sans perdre du temps sur des méthodes inefficaces</h2>
                     <div class="register-form" id="register-form">
-                        <form action="https://formsubmit.co/lomig.guegueniat@gmail.com" method="POST">
+                        <form id="webinar-form">
                             <input type="hidden" name="_subject" value="Nouvelle inscription Webinaire">
                             <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="https://lomig22.github.io/DEV-AGENCY/merci.html">
                             <input type="text" name="name" placeholder="Entre ton nom et prénom" required>
                             <input type="email" name="email" placeholder="Entre ton email" required>
                             <input type="tel" name="phone" placeholder="Entre ton numéro de téléphone" required>
-                            <button type="submit" class="submit-btn">
+                            <button type="submit" class="submit-btn" id="submit-btn">
                                 <span>Je m'inscris au webinaire</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                             <p class="form-note">🔒 100% gratuit – Aucune carte bancaire requise</p>
                         </form>
+                        <div class="form-success" id="form-success">
+                            <div class="sending">📩 Ton invitation est en cours d'envoi ...</div>
+                            <h3>✅ Merci d'avoir rempli ce formulaire, tu veux aller plus loin ?</h3>
+                            <p>👇🏻 <strong style="color:#fff;">Réserve un appel gratuit avec mon équipe</strong> pour obtenir un audit de ton site web actuel gratuitement ou obtenir une nouvelle maquette de site web gratuite orientée conversion !</p>
+                            <a href="https://calendly.com/paymentfloww/prevuesiteweb" target="_blank" class="calendly-btn">
+                                <span>Réserver ma consultation gratuite</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                     <p class="hero-below-form">Tu vas découvrir comment je génère entre 50 et 150 leads qualifiés par mois et plusieurs demandes de devis chaque semaine grâce à des stratégies simples.<br>Pas de blabla, uniquement des méthodes actionnables pour te lancer, même sans audience, sans réseau et sans compétences techniques.</p>
                 </div>
@@ -380,11 +396,33 @@
     </footer>
 
     <script>
-        // LinkedIn conversion tracking on form submit
-        document.querySelector('.register-form form').addEventListener('submit', function() {
-            if (typeof window.lintrk !== 'undefined') {
-                window.lintrk('track', { conversion_id: 26876553 });
-            }
+        // AJAX form submission
+        document.getElementById('webinar-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.innerHTML = '<span>Envoi en cours...</span><i class="fas fa-spinner fa-spin"></i>';
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+
+            fetch('https://formsubmit.co/ajax/lomig.guegueniat@gmail.com', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                // LinkedIn conversion tracking
+                if (typeof window.lintrk !== 'undefined') {
+                    window.lintrk('track', { conversion_id: 26876553 });
+                }
+                document.getElementById('webinar-form').style.display = 'none';
+                document.getElementById('form-success').classList.add('visible');
+            })
+            .catch(() => {
+                btn.innerHTML = '<span>Je m\'inscris au webinaire</span><i class="fas fa-arrow-right"></i>';
+                btn.disabled = false;
+            });
         });
 
         // Fade-in animation on scroll
